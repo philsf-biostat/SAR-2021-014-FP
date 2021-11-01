@@ -7,16 +7,17 @@ library(labelled)
 
 # data loading ------------------------------------------------------------
 set.seed(42)
-data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
-# data.raw <- read_excel("dataset/file.xlsx") %>%
-#   janitor::clean_names()
+# data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
+data.raw <- read_excel("dataset/EXCEL ESPINO-PELVICO.xlsx") %>%
+  janitor::clean_names()
 
 
 # data cleaning -----------------------------------------------------------
 
-# data.raw <- data.raw %>%
-#   filter() %>%
-#   select()
+data.raw <- data.raw %>%
+  rename(id = pacientes) %>%
+  select(-doencas) %>%
+  filter()
 
 # data wrangling ----------------------------------------------------------
 
