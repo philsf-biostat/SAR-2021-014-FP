@@ -24,11 +24,12 @@ theme_gtsummary_language(language = "pt") # traduzir
 
 # tables ------------------------------------------------------------------
 
-tab_desc <- analytical %>%
+tab_desc <- participantes %>%
   # select
   select(-id, ) %>%
   tbl_summary(
     # by = group
+    include = -dor_t,
   ) %>%
   # modify_caption(caption = "**Tabela 1** Características demográficas") %>%
   # modify_header(label ~ "**Características dos pacientes**") %>%
