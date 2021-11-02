@@ -172,4 +172,4 @@ Esta análise será realizada utilizando-se o software `R` versão `r getRversio
 
 Tanto este plano analítico como o relatório correspondente (**SAR-2021-014-FP-v01**) podem ser obtidos no seguinte endereço:
 
-https://philsf-biostat.github.io/SAR-2021-014-FP/
+<https://philsf-biostat.github.io/SAR-2021-014-FP/>
