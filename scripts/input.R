@@ -16,7 +16,7 @@ c.orig <- data.raw %>% ncol
 # data cleaning -----------------------------------------------------------
 
 data.raw <- data.raw %>%
-  select(-doencas, -diagnostico) %>%
+  select(-doencas, -diagnostico, -variacao) %>%
   rename(
     id = pacientes,
     dor_t = dor_em_meses,
@@ -40,16 +40,16 @@ participantes <- data.raw %>%
   )
 data.raw <- data.raw %>%
   select(
-    -sexo,
-    -idade,
-    -imc,
+    # -sexo,
+    # -idade,
+    # -imc,
     -dor_t,
     -lombalgia,
     -hhs,
-    -tipo,
+    # -tipo,
     -mobilidade,
     -hipermovel,
-    -tonnis,
+    # -tonnis,
   )
 
 # reshape
@@ -64,19 +64,24 @@ data.raw <- data.raw %>%
 data.raw <- data.raw %>%
   mutate(
     id = factor(id), # or as.character
+    sexo = factor(sexo),
+    tipo = factor(tipo),
     dor = case_when(
       dor == lado ~ 1,
       dor == 3 ~ 1,
       TRUE ~ 0,
     ),
+    tonnis = factor(tonnis),
+    group = ifelse(tonnis %in% 0:1, "A", "B"),
   )
 participantes <- participantes %>%
   mutate(
     id = factor(id), # or as.character
     sexo = factor(sexo, labels = c("Feminino", "Masculino")),
-    tipo = factor(tipo),
     tonnis = factor(tonnis, labels = c("Normal", "Leve", "Moderada", "Grave")),
+    tipo = factor(tipo, levels = c("1A", "1B", "2A", "2B")),
     lombalgia = ifelse(lombalgia == 2, 0, 1),
+    mobilidade = factor(mobilidade, labels = c("Normal", "Hipermóvel", "Rígido"))
   )
 
 # labels ------------------------------------------------------------------
@@ -88,7 +93,9 @@ data.raw <- data.raw %>%
 # analytical dataset ------------------------------------------------------
 
 analytical <- data.raw %>%
-  select(everything())
+  select(
+    -tonnis
+  )
 
 # mockup of analytical dataset for SAP and public SAR
 analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(nrow(analytical)) ) ) %>%
