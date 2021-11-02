@@ -63,7 +63,19 @@ kable(history)
 
 ## Objetivos
 
+Avaliar a variação do slope sacral entre as posições em pé e sentado nos pacientes com alterações
+biomecânicas primárias do quadril.
+
+Objetivo Secundário:
+Comparar entre os grupos com e sem artrose as associações com índice de massa corpórea, idade e
+escore funcional. Divulgar perante a
+especialidade e importância da avaliação dos ângulos espino-pélvicos na primária do quadril.
+
 ## Hipóteses
+
+O ângulo espino-pélvico chamado slope sacral varia de acordo com o grau de artrose do quadril.
+O ângulo espino-pélvico chamado slope sacral varia entre posições sentado e em pé de forma diminuída de acordo com a idade e índice de massa corpórea do paciente.
+O ângulo espino-pélvico chamado inclinação pélvica varia entre os pacientes com artrose do quadril.
 
 # Dados
 
@@ -136,32 +148,6 @@ bicaudais.
 <!-- unicaudais à direita. -->
 
 ## Tamanho da amostra e Poder
-
-```{r}
-n <- analytical %>%
-  count(group) %>%
-  pull(n)
-n1 <- n[1]
-n2 <- n[2]
-total <- sum(n)
-d <- pwr::pwr.t2n.test(n1 = n1, n2 = n2, power = .8, sig.level = .05)$d %>%
-  format.float()
-d <- pwr::pwr.t.test(n = total/2, power = .8, sig.level = .05)$d %>%
-  format.float()
-```
-
-<!-- Os grupos de estudo eram balanceados e o tamanho total da amostra foi `r total` incluindo todos os grupos. -->
-
-<!-- Os grupos do estudo não eram balanceados com -->
-<!-- `r n1` participantes no grupo1 -->
-<!-- e -->
-<!-- `r n2` participantes no grupo2 -->
-<!-- e um total amostral de `r total`. -->
-<!-- Esta análise de poder ajusta para os diferentes tamanhos dos grupos. -->
-
-<!-- Com estes tamanhos amostrais um teste t pode detectar um tamanho de efeito tão grande quanto -->
-<!-- **d = `r d`** -->
-<!-- com poder estatísticod e 80% e um nível de significância de 5% (Cohen, 1988). -->
 
 N/A
 
