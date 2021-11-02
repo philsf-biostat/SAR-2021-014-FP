@@ -10,39 +10,85 @@ set.seed(42)
 # data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
 data.raw <- read_excel("dataset/EXCEL ESPINO-PELVICO.xlsx") %>%
   janitor::clean_names()
-
+n.orig <- data.raw %>% nrow
+c.orig <- data.raw %>% ncol
 
 # data cleaning -----------------------------------------------------------
 
 data.raw <- data.raw %>%
-  rename(id = pacientes) %>%
-  select(-doencas) %>%
-  filter()
+  select(-doencas, -diagnostico) %>%
+  rename(
+    id = pacientes,
+    dor_t = dor_em_meses,
+    dor = lado_da_dor,
+    tilt = tilt_em_pe,
+  )
+
+# perfil epidemiológico em tabela separada
+participantes <- data.raw %>%
+  select(
+    id,
+    sexo,
+    idade,
+    imc,
+    dor_t,
+    lombalgia,
+    hhs,
+    tipo,
+    mobilidade,
+    tonnis,
+  )
+data.raw <- data.raw %>%
+  select(
+    -sexo,
+    -idade,
+    -imc,
+    -dor_t,
+    -lombalgia,
+    -hhs,
+    -tipo,
+    -mobilidade,
+    -hipermovel,
+    -tonnis,
+  )
+
+# reshape
+data.raw <- data.raw %>%
+  pivot_longer(ends_with(c("_d", "_e"))) %>%
+  separate(name, c("name", "lado")) %>%
+  pivot_wider(names_from = name, values_from = value) %>%
+  mutate(lado = ifelse(lado == "d", 1, 2))
 
 # data wrangling ----------------------------------------------------------
 
 data.raw <- data.raw %>%
   mutate(
     id = factor(id), # or as.character
+    dor = case_when(
+      dor == lado ~ 1,
+      dor == 3 ~ 1,
+      TRUE ~ 0,
+    ),
+  )
+participantes <- participantes %>%
+  mutate(
+    id = factor(id), # or as.character
+    sexo = factor(sexo, labels = c("Feminino", "Masculino")),
+    tipo = factor(tipo),
+    tonnis = factor(tonnis, labels = c("Normal", "Leve", "Moderada", "Grave")),
+    lombalgia = ifelse(lombalgia == 2, 0, 1),
   )
 
 # labels ------------------------------------------------------------------
 
 data.raw <- data.raw %>%
   set_variable_labels(
-    group = "Study group",
-    outcome = "Study outcome",
   )
 
 # analytical dataset ------------------------------------------------------
 
 analytical <- data.raw %>%
-  # select analytic variables
-  select(
-    id,
-    group,
-    outcome,
-  )
+  select(everything())
 
 # mockup of analytical dataset for SAP and public SAR
 analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(nrow(analytical)) ) ) %>%
