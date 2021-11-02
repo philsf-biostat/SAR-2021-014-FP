@@ -17,6 +17,10 @@ c.orig <- data.raw %>% ncol
 
 data.raw <- data.raw %>%
   select(-doencas, -diagnostico, -variacao) %>%
+  mutate(
+    hipermovel = str_detect(tipo, fixed("*")),
+    tipo = str_remove(tipo, fixed("*")),
+  ) %>%
   rename(
     id = pacientes,
     dor_t = dor_em_meses,
