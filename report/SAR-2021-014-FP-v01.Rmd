@@ -1,7 +1,7 @@
 ---
-title: "[title]"
+title: "Diferenças nos ângulos espino-pélvicos em pacientes com artrose"
 subtitle: 'DOCUMENTO: SAR-2021-014-FP-v01'
-author: '**De:** Felipe Figueiredo **Para:** ___'
+author: '**De:** Felipe Figueiredo **Para:** Fernando de Pina Cabral'
 # date: yyyy-mm-dd
 output:
   html_document:
@@ -36,7 +36,7 @@ panderOptions('table.split.table', 160)
 
 ---
 
-[title]
+Diferenças nos ângulos espino-pélvicos em pacientes com artrose
 
 **Histórico do documento**
 
@@ -103,7 +103,7 @@ tab_inf %>%
 
 # Referências
 
-- **SAP-2021-014-FP-v01** -- Plano Analítico para [title]
+- **SAP-2021-014-FP-v01** -- Plano Analítico para Diferenças nos ângulos espino-pélvicos em pacientes com artrose
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
 
 # Apêndice

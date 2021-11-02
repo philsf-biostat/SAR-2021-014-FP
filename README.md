@@ -1,21 +1,13 @@
-<!-- Instruções -->
+# Diferenças nos ângulos espino-pélvicos em pacientes com artrose
 
-<!-- - substituir yyyy-NNN-XX -->
-<!-- - v01: substituir mmm01/mmm02 pela milestone -->
-<!-- - v02: substituir ppp01/ppp02 pelo projeto -->
-<!-- - Remover esse bloco -->
+Avaliar a variação do slope sacral entre as posições em pé e sentado nos pacientes com alterações biomecânicas primárias do quadril.
 
-# título
-
-Objetivo
-
-Análise Estatística para PESSOA (LOCAL, aaaa)
+Análise Estatística para Fernando de Pina Cabral (Hospital Regional de São José, 2021)
 
 ## Análises realizadas
 
 1. Análise descritiva
 1. Análise inferencial
-1. Análise de poder
 1. Modelagem estatística
 
 ## Documentos
