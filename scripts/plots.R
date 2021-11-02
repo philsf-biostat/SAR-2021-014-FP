@@ -19,10 +19,25 @@ gg <- ggplot(analytical) +
 
 # plots -------------------------------------------------------------------
 
-gg.outcome <- gg +
-  geom_density(aes(outcome, fill = group), alpha = .8) +
-  xlab(attr(analytical$outcome, "label")) +
-  ylab("")
+gg.angulos <- analytical %>%
+  pivot_longer(c(slope_em_pe, slope_sentado, tilt, acb, ia, alfa), names_to = "medida", values_to = "angulo") %>%
+  # transmute(group, angulo, medida = case_when(
+  #   medida == "slope_em_pe" ~ "Slope (em pé)",
+  #   medida == "slope_sentado" ~ "Slope (sentado)",
+  #   medida == "tilt" ~ "Tilt (em pé)",
+  #   medida == "acb" ~ "ACB",
+  #   medida == "ia" ~"IA",
+  #   medida == "alfa" ~ "Alfa",
+  #   medida == "variacao" ~ "Variação",
+  # )) %>%
+  # rename(Grupo = group) %>%
+  ggplot(aes(angulo, fill = group)) +
+  facet_wrap(~ medida) +
+  geom_density(alpha = .7) +
+  scale_fill_brewer(palette = ff.pal) +
+  xlab("Ângulo") +
+  ylab("Densidade") +
+  theme(legend.title = element_blank())
 
 # cool facet trick from https://stackoverflow.com/questions/3695497 by JWilliman
 # gg +
