@@ -2,7 +2,7 @@
 title: "Plano Analítico para [title]"
 subtitle: 'DOCUMENTO: SAP-2021-014-FP-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
-date: yyyy-mm-dd
+# date: yyyy-mm-dd
 output:
   html_document:
     fig_caption: yes
