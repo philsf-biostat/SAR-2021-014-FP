@@ -54,6 +54,7 @@ kable(history)
 # Lista de abreviaturas
 
 - ACB:
+- ANCOVA:
 - DP: Desvio padrão
 - HHS: Harris hip score
 - IA:
@@ -133,27 +134,20 @@ As distribuições das caracerísticas dos participantes serão resumidas em tab
 
 ### Análise inferencial
 
-Todas as comparações entre os grupos serão avaliadas como análises univariadas.
-Variáveis contínuas serão comparadas entre os grupos com o
-teste t de grupos independentes com a correção de Welch.
-<!-- teste t pareado com a correção de Welch. -->
-<!-- teste de Wilcoxon. -->
-Diferenças nas distribuições de variáveis categóricas serão avaliadas com o teste
-exato de Fisher.
-<!-- qui-quadrado. -->
-<!-- McNemar. -->
-
-<!-- Todas as análises inferenciais serão realizadas com base nos modelos estatísticos (descritos na próxima seção). -->
+A unidade de análise será o quadril.
+Variáveis contínuas serão comparadas entre os grupos com
+um modelo linear ajustado por sexo, idade e IMC dos participantes (ANCOVA).
+Este teste é semelhante ao teste t, mas permite o ajuste por covariáveis para corrigir por confundimento.
 
 ### Modelagem estatística
+
+N/A.
 
 ## Significância e Intervalos de Confiança
 
 Todas as análises serão realizadas ao nível de significância de 5%.
 Todos os testes de hipóteses e intervalos de confiança calculados serão
 bicaudais.
-<!-- unicaudais à esquerda. -->
-<!-- unicaudais à direita. -->
 
 ## Tamanho da amostra e Poder
 
