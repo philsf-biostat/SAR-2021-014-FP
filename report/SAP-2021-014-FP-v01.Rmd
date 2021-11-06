@@ -97,6 +97,9 @@ A tabela de dados brutos será reformatada para usar a escala em quadril, identi
 A tabela de dados brutos foi transformada de modo que cada observação é um quadril, tendo identificado o lado do quadril, se há ocorrência de dor e os ângulos mensurados.
 A tabela resultante é a tabela de dados analíticos, usada para avaliação dos desfechos da análise.
 
+A classificação de artrose foi definida em protocolo como possuindo classificação de Tonnis moderada ou grave.
+O grupo comparador é formado pelos casos em que a classificação de Tonnis foi Normal ou Leve.
+
 Todas as variáveis da tabela de dados analíticos foram identificadas de acordo com as descrições das variáveis, e os valores foram identificados de acordo com o dicionário de dados providenciado.
 Estas identificações possibilitarão a criação de tabelas de resultados com qualidade de produção final.
 
