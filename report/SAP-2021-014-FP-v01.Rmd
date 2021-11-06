@@ -112,6 +112,8 @@ Os desfechos secundários estão definidos como as diferenças médias dos ângu
 
 ## Covariáveis
 
+As estimativas de diferença média entre os grupos serão ajustadas pelo sexo, idade e IMC dos participantes.
+
 # Métodos estatísticos
 
 ## Análises estatísticas
