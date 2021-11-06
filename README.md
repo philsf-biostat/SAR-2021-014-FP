@@ -1,6 +1,6 @@
 # Diferenças nos ângulos espino-pélvicos em pacientes com artrose
 
-Avaliar a variação do slope sacral entre as posições em pé e sentado nos pacientes com alterações biomecânicas primárias do quadril.
+Avaliar a variação do slope sacral entre os grupos com e sem artrose nos pacientes com alterações biomecânicas primárias do quadril, nas posições em pé e sentado.
 
 Análise Estatística para Fernando de Pina Cabral (Hospital Regional de São José, 2021)
 

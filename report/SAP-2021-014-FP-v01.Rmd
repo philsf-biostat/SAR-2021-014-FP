@@ -65,12 +65,7 @@ kable(history)
 
 ## Objetivos
 
-Avaliar a variação do slope sacral entre as posições em pé e sentado nos pacientes com alterações
-biomecânicas primárias do quadril.
-
-Objetivo Secundário:
-Comparar entre os grupos com e sem artrose as associações com índice de massa corpórea, idade e
-escore funcional.
+Avaliar a variação do slope sacral entre os grupos com e sem artrose nos pacientes com alterações biomecânicas primárias do quadril, nas posições em pé e sentado.
 
 ## Hipóteses
 
