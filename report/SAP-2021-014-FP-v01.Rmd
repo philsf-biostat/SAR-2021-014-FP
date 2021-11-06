@@ -55,6 +55,7 @@ kable(history)
 
 - ACB:
 - DP: Desvio padrão
+- HHS: Harris hip score
 - IA:
 - IC: Intervalo de confiança
 - IMC: Índice de massa corpórea
@@ -124,10 +125,9 @@ O perfil epidemiológico dos participantes do estudo será descrito na baseline.
 As características demográficas
 (sexo, idade e IMC)
 e clínicas
-<!-- ( [vars] ) -->
+(lado da dor no quadril e o tempo em meses, ocorrência de lombalgia, HHS, tipo, mobilidade e classificação Tonnis)
 serão descritas como
 média (DP)
-<!-- mediana (IIQ) -->
 ou frequência e proporção (%), conforme apropriado.
 As distribuições das caracerísticas dos participantes serão resumidas em tabelas e visualizadas em gráficos exploratórios
 
