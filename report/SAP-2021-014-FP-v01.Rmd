@@ -63,6 +63,8 @@ kable(history)
 
 # Contexto
 
+Dados coletados transversalmente de pacientes com dor no quadril, em busca de associações com problemas na coluna associados a impactos femoroacetabulares de quadril.
+
 ## Objetivos
 
 Avaliar a variação do slope sacral entre os grupos com e sem artrose nos pacientes com alterações biomecânicas primárias do quadril, nas posições em pé e sentado.
@@ -80,8 +82,6 @@ source("scripts/input.R", encoding = 'UTF-8')
 ```
 
 ## Dados brutos
-
-Dados coletados transversalmente de pacientes com dor no quadril, em busca de associações com problemas na coluna associados a impactos femoroacetabulares de quadril.
 
 A tabela de dados brutos exibe `r c.orig` características de `r n.orig` pacientes do Hospital Regional de São José em Santa Catarina, incluindo características demográficas e mensurações de ângulos espino-pélvicos.
 
