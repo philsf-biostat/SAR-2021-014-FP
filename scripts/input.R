@@ -92,6 +92,25 @@ participantes <- participantes %>%
 
 data.raw <- data.raw %>%
   set_variable_labels(
+    slope_em_pe = "Slope (em pé)",
+    slope_sentado = "Slope (sentado)",
+    tilt = "Tilt (em pé)",
+    acb = "ACB",
+    ia = "IA",
+    alfa = "Alfa",
+  )
+
+participantes <- participantes %>%
+  set_variable_labels(
+    sexo = "Sexo",
+    idade = "Idade (anos)",
+    imc = "IMC (kg/m²)",
+    lombalgia = "Ocorrência de lombalgia",
+    hhs = "HHS",
+    tipo = "Tipo",
+    tonnis = "Classificação Tonnis",
+    mobilidade = "Mobilidade",
+    # variacao = "Variação",
   )
 
 # analytical dataset ------------------------------------------------------
