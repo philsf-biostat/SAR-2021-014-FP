@@ -63,7 +63,7 @@ kable(history)
 
 # Contexto
 
-Dados coletados transversalmente de pacientes com dor no quadril, em busca de associações com problemas na coluna associados a impactos femoroacetabulares de quadril.
+Dados coletados transversalmente de pacientes com dor no quadril, em busca de problemas na coluna que possam estar associados a impactos femoroacetabulares de quadril.
 
 ## Objetivos
 
