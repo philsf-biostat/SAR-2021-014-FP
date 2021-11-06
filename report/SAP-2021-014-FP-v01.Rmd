@@ -2,7 +2,7 @@
 title: "Plano Analítico para Diferenças nos ângulos espino-pélvicos em pacientes com artrose"
 subtitle: 'DOCUMENTO: SAP-2021-014-FP-v01'
 author: '**De:** Felipe Figueiredo **Para:** Fernando de Pina Cabral'
-# date: yyyy-mm-dd
+date: 2021-11-05
 output:
   html_document:
     fig_caption: yes
