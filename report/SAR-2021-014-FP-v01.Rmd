@@ -182,7 +182,7 @@ knitr::include_graphics("../figures/angulos.png", error = FALSE)
 tab_inf %>%
     as_kable(
     align = "lccc",
-    caption = "**Tabela 2** caption"
+    caption = "**Tabela 2** Diferenças ajustadas dos ângulos espinopélvicos na população do estudo."
   )
 ```
 
