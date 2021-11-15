@@ -133,6 +133,19 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 
 ## População do estudo e acompanhamento
 
+Ao total 17 participantes foram incluídos no estudo (Tabela 1).
+O perfil epidemiológico do paciente incluído é composto por
+mulheres (76%)
+em torno de 40 anos
+com IMC 21.5 kg/m².
+O participante sente dor predominantemente
+no quadril direito (41%)
+há quase 3 anos (32 meses).
+
+Dos participantes incluídos 14 foram classificados no grupo Sadio com 53% apresentando classificação Tonnis Normal e 29% Leve, e 3 participantes foram classificados no grupo Artrose (6% Tonnis Moderada e 12% Grave).
+O HHS médio do é 70 com DP 11 e em sua maioria estes não possuem alteração na mobilidade (65%) com apenas 18% apresentando hipermobilidade e outros 18% com rigidez no movimento.
+A maior parte da amostra apresenta lombalgia concomitante com as alterações espino-pélvicas (71%) avaliadas.
+
 ```{r tab_desc}
 tab_desc %>%
     as_kable(
