@@ -99,9 +99,9 @@ participantes <- participantes %>%
 
 data.raw <- data.raw %>%
   set_variable_labels(
-    slope_em_pe = "Slope (em pé)",
-    slope_sentado = "Slope (sentado)",
-    tilt = "Tilt (em pé)",
+    slope_em_pe = "Slope sacral (em pé)",
+    slope_sentado = "Slope sacral (sentado)",
+    tilt = "Inclinação pélvica",
     acb = "ACB",
     ia = "IA",
     alfa = "Alfa",

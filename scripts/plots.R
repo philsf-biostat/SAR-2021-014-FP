@@ -22,12 +22,12 @@ gg <- ggplot(participantes) +
 gg.angulos <- analytical %>%
   pivot_longer(c(slope_em_pe, slope_sentado, tilt, acb, ia, alfa), names_to = "medida", values_to = "angulo") %>%
   transmute(group, angulo, medida = case_when(
-    medida == "slope_em_pe" ~ "Slope (em pé)",
-    medida == "slope_sentado" ~ "Slope (sentado)",
-    medida == "tilt" ~ "Tilt (em pé)",
-    medida == "acb" ~ "ACB",
-    medida == "ia" ~"IA",
-    medida == "alfa" ~ "Alfa",
+    medida == "slope_em_pe" ~ attr(analytical$slope_em_pe, "label"),
+    medida == "slope_sentado" ~ attr(analytical$slope_sentado, "label"),
+    medida == "tilt" ~ attr(analytical$tilt, "label"),
+    medida == "acb" ~ attr(analytical$acb, "label"),
+    medida == "ia" ~ attr(analytical$ia, "label"),
+    medida == "alfa" ~ attr(analytical$alfa, "label"),
     medida == "variacao" ~ "Variação",
   )) %>%
   # rename(Grupo = group) %>%
