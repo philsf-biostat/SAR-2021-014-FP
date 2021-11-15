@@ -106,7 +106,7 @@ Os desfechos secundários estão definidos como as diferenças médias dos ângu
 
 ### Covariáveis
 
-As estimativas de diferença média entre os grupos foram ajustadas pelo sexo, idade e IMC dos participantes.
+As estimativas de diferença nos ângulos entre os grupos foram ajustadas pelo sexo, idade e IMC dos participantes.
 
 ## Análises Estatísticas
 
@@ -118,10 +118,10 @@ e clínicas
 foram descritas como
 média (DP)
 ou frequência e proporção (%), conforme apropriado.
-As distribuições das características dos participantes foram resumidas em tabelas e visualizadas em gráficos exploratórios
+As distribuições das características dos participantes foram resumidas em tabelas e visualizadas em gráficos exploratórios.
 
-A unidade de análise foi o quadril.
-Variáveis contínuas foram comparadas entre os grupos com
+A unidade de análise dos desfechos foi o quadril, considerando ambos os lados de cada participante incluído no estudo.
+Os desfechos foram calculados com
 um modelo linear ajustado por sexo, idade e IMC dos participantes (ANCOVA).
 Este teste é semelhante ao teste t, mas permite o ajuste por covariáveis para corrigir por confundimento.
 
