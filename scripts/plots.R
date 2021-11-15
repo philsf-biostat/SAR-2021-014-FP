@@ -13,7 +13,7 @@ theme_update(
   legend.position = "top"
 )
 
-gg <- ggplot(analytical) +
+gg <- ggplot(participantes) +
   scale_color_brewer(palette = ff.pal) +
   scale_fill_brewer(palette = ff.pal)
 
@@ -21,15 +21,15 @@ gg <- ggplot(analytical) +
 
 gg.angulos <- analytical %>%
   pivot_longer(c(slope_em_pe, slope_sentado, tilt, acb, ia, alfa), names_to = "medida", values_to = "angulo") %>%
-  # transmute(group, angulo, medida = case_when(
-  #   medida == "slope_em_pe" ~ "Slope (em pé)",
-  #   medida == "slope_sentado" ~ "Slope (sentado)",
-  #   medida == "tilt" ~ "Tilt (em pé)",
-  #   medida == "acb" ~ "ACB",
-  #   medida == "ia" ~"IA",
-  #   medida == "alfa" ~ "Alfa",
-  #   medida == "variacao" ~ "Variação",
-  # )) %>%
+  transmute(group, angulo, medida = case_when(
+    medida == "slope_em_pe" ~ "Slope (em pé)",
+    medida == "slope_sentado" ~ "Slope (sentado)",
+    medida == "tilt" ~ "Tilt (em pé)",
+    medida == "acb" ~ "ACB",
+    medida == "ia" ~"IA",
+    medida == "alfa" ~ "Alfa",
+    medida == "variacao" ~ "Variação",
+  )) %>%
   # rename(Grupo = group) %>%
   ggplot(aes(angulo, fill = group)) +
   facet_wrap(~ medida) +

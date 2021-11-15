@@ -13,4 +13,4 @@ units <- "cm"
 
 # save plots --------------------------------------------------------------
 
-ggsave(filename = "figures/angulos.png", plot = gg.angulos, height = height, width = width, units = units)
+ggsave(filename = "figures/angulos.png", plot = gg.angulos, height = 16, width = 16, units = units)
