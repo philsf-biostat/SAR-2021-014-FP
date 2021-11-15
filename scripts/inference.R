@@ -13,14 +13,14 @@ tab_inf <- analytical %>%
   tbl_summary(
     by = group,
     # include = starts_with(c("slope", "tilt")),
-    include = -c(sexo, idade, imc, dor, lado),
+    include = c(slope_em_pe, slope_sentado, tilt, acb, ia, alfa),
   ) %>%
   add_difference(
     # test = all_continuous() ~ "cohens_d",
     adj.vars = c(sexo, idade, imc),
   ) %>%
   modify_header(label ~ "**Ângulos**") %>%
-  modify_footnote(update = c(estimate, ci, p.value) ~ "ANCOVA (ajustada por sexo, idade e IMC)") %>%
+  modify_footnote(update = c(estimate, ci, p.value) ~ "ANCOVA (ajustada por sexo, idade, IMC e HHS)") %>%
   modify_header(estimate ~ '**Diferença ajustada**') %>%
   bold_p() %>%
   bold_labels()

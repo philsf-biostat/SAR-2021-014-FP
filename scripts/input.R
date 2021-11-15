@@ -69,7 +69,7 @@ data.raw <- data.raw %>%
     # -imc,
     -dor_t,
     -lombalgia,
-    -hhs,
+    # -hhs,
     -tipo,
     -mobilidade,
     -hipermovel,
