@@ -1,4 +1,4 @@
-# Avaliação de ângulos espino-pélvicos em pacientes com e sem artrose em um hospital de SC
+# Associação entre artrose e alteração de ângulos espino-pélvicos em pacientes com impacto femoroacetabular
 
 Avaliar a variação do slope sacral e da inclinação pélvica entre os grupos com e sem artrose nos pacientes com alterações biomecânicas primárias do quadril, nas posições em pé e sentado.
 
