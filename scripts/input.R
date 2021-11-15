@@ -56,13 +56,6 @@ data.raw <- data.raw %>%
     # -tonnis,
   )
 
-# reshape
-data.raw <- data.raw %>%
-  pivot_longer(ends_with(c("_d", "_e"))) %>%
-  separate(name, c("name", "lado")) %>%
-  pivot_wider(names_from = name, values_from = value) %>%
-  mutate(lado = ifelse(lado == "d", 1, 2))
-
 # data wrangling ----------------------------------------------------------
 
 data.raw <- data.raw %>%
@@ -70,11 +63,6 @@ data.raw <- data.raw %>%
     id = factor(id), # or as.character
     sexo = factor(sexo),
     tipo = factor(tipo),
-    dor = case_when(
-      dor == lado ~ 1,
-      dor == 3 ~ 1,
-      TRUE ~ 0,
-    ),
     tonnis = factor(tonnis),
     group = ifelse(tonnis %in% 0:1, "A", "B"),
     group = factor(group, labels = c("Sadio", "Artrose")),
@@ -87,6 +75,22 @@ participantes <- participantes %>%
     tipo = factor(tipo, levels = c("1A", "1B", "2A", "2B")),
     lombalgia = ifelse(lombalgia == 2, 0, 1),
     mobilidade = factor(mobilidade, labels = c("Normal", "Hipermóvel", "Rígido"))
+  )
+
+
+# reshape -----------------------------------------------------------------
+
+data.raw <- data.raw %>%
+  pivot_longer(ends_with(c("_d", "_e"))) %>%
+  separate(name, c("name", "lado")) %>%
+  pivot_wider(names_from = name, values_from = value) %>%
+  mutate(
+    lado = ifelse(lado == "d", 1, 2),
+    dor = case_when(
+      dor == lado ~ 1,
+      dor == 3 ~ 1,
+      TRUE ~ 0,
+    ),
   )
 
 # labels ------------------------------------------------------------------
