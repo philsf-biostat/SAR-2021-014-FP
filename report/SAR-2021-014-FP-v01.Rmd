@@ -168,11 +168,6 @@ O slope em pé médio no grupo Artrose foi 32 graus (DP 3 graus), e no grupo Sad
 O slope sentado no grupo Artrose foi 14 graus (DP 9 graus) e no grupo Sadio 21 graus (DP 7 graus).
 O tilt médio foi negativo no grupo Artrose (-6, DP 3 graus) e positivo no grupo Sadio (5, DP 6 graus).
 
-Os outros ângulos espino-pélvicos tiveram distribuições semelhantes entre os dois grupos.
-O ângulo ACB médio no grupo Artrose foi 34,2 graus e 31,8 graus no grupo Sadio.
-O ângulo IA médio foi 1,7 graus no grupo Artrose e 2,8 graus no grupo Sadio.
-O ângulo Alfa médio foi 57 graus no grupo Artrose e 59 no grupo Sadio.
-
 ```{r fig1, fig.cap="**Figura 1** Distribuição dos ângulos espinopélvicos na população do estudo."}
 # ![Age](../figures/distr_age.png)
 knitr::include_graphics("../figures/angulos.png", error = FALSE)
@@ -185,6 +180,11 @@ tab_inf %>%
     caption = "**Tabela 2** Diferenças ajustadas dos ângulos espinopélvicos na população do estudo."
   )
 ```
+
+Os outros ângulos espino-pélvicos tiveram distribuições semelhantes entre os dois grupos.
+O ângulo ACB médio no grupo Artrose foi 34,2 graus e 31,8 graus no grupo Sadio.
+O ângulo IA médio foi 1,7 graus no grupo Artrose e 2,8 graus no grupo Sadio.
+O ângulo Alfa médio foi 57 graus no grupo Artrose e 59 no grupo Sadio.
 
 # Observações e limitações
 
