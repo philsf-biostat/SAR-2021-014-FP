@@ -30,6 +30,7 @@
 
 # Template Cohen's D table (obs: does NOT compute p)
 tab_inf <- analytical %>%
+  mutate(group = relevel(group, "Artrose")) %>%
   # select
   select(-id) %>%
   tbl_summary(
