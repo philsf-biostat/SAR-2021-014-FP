@@ -1,5 +1,5 @@
 ---
-title: "Diferenças nos ângulos espino-pélvicos em pacientes com artrose"
+title: "Associação entre artrose e alteração de ângulos espino-pélvicos em pacientes com impacto femoroacetabular"
 subtitle: 'DOCUMENTO: SAR-2021-014-FP-v01'
 author: '**De:** Felipe Figueiredo **Para:** Fernando de Pina Cabral'
 # date: yyyy-mm-dd
@@ -36,7 +36,7 @@ panderOptions('table.split.table', 160)
 
 ---
 
-**Diferenças nos ângulos espino-pélvicos em pacientes com artrose**
+**Associação entre artrose e alteração de ângulos espino-pélvicos em pacientes com impacto femoroacetabular**
 
 **Histórico do documento**
 
@@ -53,11 +53,11 @@ kable(history)
 
 # Lista de abreviaturas
 
-- ACB:
-- ANCOVA:
+- ACB: ângulo centro-borda acetabular
+- ANCOVA: Análise de covariância
 - DP: Desvio padrão
 - HHS: Harris hip score
-- IA:
+- IA: índice acetabular
 - IC: Intervalo de confiança
 - IMC: Índice de massa corpórea
 
@@ -71,7 +71,7 @@ Dados coletados transversalmente de pacientes com dor no quadril, em busca de pr
 
 ## Objetivos
 
-Avaliar a variação do slope sacral entre os grupos com e sem artrose nos pacientes com alterações biomecânicas primárias do quadril, nas posições em pé e sentado.
+Avaliar a variação do slope sacral e da inclinação pélvica entre os grupos com e sem artrose nos pacientes com alterações biomecânicas primárias do quadril, nas posições em pé e sentado.
 
 ## Recepção e tratamento dos dados
 
@@ -97,15 +97,16 @@ Estas identificações possibilitarão a criação de tabelas de resultados com 
 ### Desfechos primário e secundário
 
 Os desfechos primários estão definidos como
-a diferença média entre o ângulo chamado slope sacral entre os participantes com e sem artrose na posição sentada,
-a diferença média entre o ângulo chamado slope sacral entre os participantes com e sem artrose na posição em pé e
-o ângulo chamado inclinação pélvica entre os participantes com e sem artrose.
+a diferença entre as médias do grupo Artrose e o grupo Sadio 
+do ângulo chamado slope sacral na posição sentada,
+do ângulo chamado slope sacral na posição em pé e
+do ângulo chamado inclinação pélvica.
 
 Os desfechos secundários estão definidos como as diferenças médias dos ângulos ACB, IA e Alfa ente os pacientes com e sem artrose.
 
 ### Covariáveis
 
-As estimativas de diferença média entre os grupos foram ajustadas pelo sexo, idade e IMC dos participantes.
+As estimativas de diferença nos ângulos entre os grupos foram ajustadas pelo sexo, idade, IMC e HHS dos participantes.
 
 ## Análises Estatísticas
 
@@ -117,10 +118,10 @@ e clínicas
 foram descritas como
 média (DP)
 ou frequência e proporção (%), conforme apropriado.
-As distribuições das características dos participantes foram resumidas em tabelas e visualizadas em gráficos exploratórios
+As distribuições das características dos participantes foram resumidas em tabelas e visualizadas em gráficos exploratórios.
 
-A unidade de análise foi o quadril.
-Variáveis contínuas foram comparadas entre os grupos com
+A unidade de análise dos desfechos foi o quadril, considerando ambos os lados de cada participante incluído no estudo.
+Os desfechos foram calculados com
 um modelo linear ajustado por sexo, idade e IMC dos participantes (ANCOVA).
 Este teste é semelhante ao teste t, mas permite o ajuste por covariáveis para corrigir por confundimento.
 
@@ -154,9 +155,9 @@ tab_desc %>%
   )
 ```
 
-O slope em pé médio no estudo foi 43,2 graus (DP 9,67 graus), variando entre -10 e 17 graus.
-O slope sentado médio foi 19,8 graus (DP 7,41 graus) e variou entre 5 e 32 graus.
-O tilt médio foi 3.12 graus (DP 7.12 graus), variando entre -4 e 17 graus.
+O slope sacral em pé médio no estudo foi 43,2 graus (DP 9,67 graus), variando entre -10 e 17 graus.
+O slope sacral sentado médio foi 19,8 graus (DP 7,41 graus) e variou entre 5 e 32 graus.
+A inclinação pélvica médio foi 3.12 graus (DP 7.12 graus), variando entre -4 e 17 graus.
 O ângulo ACB médio foi 32,2 graus (DP 6,04 graus),
 o ângulo alfa médio foi 58,8 graus (DP 6,70 graus) e o
 ângulo IA médio foi 2,56 graus (DP 3,99 graus).
@@ -164,13 +165,15 @@ o ângulo alfa médio foi 58,8 graus (DP 6,70 graus) e o
 ## Ângulos espino-pélvicos
 
 As diferenças entre os ângulos espino-pélvicos podem ser vistas na Tabela 2 e na Figura 1.
-O slope em pé médio no grupo Artrose foi 32 graus (DP 3 graus), e no grupo Sadio 46 graus (DP 9 graus).
-O slope sentado no grupo Artrose foi 14 graus (DP 9 graus) e no grupo Sadio 21 graus (DP 7 graus).
-O tilt médio foi negativo no grupo Artrose (-6, DP 3 graus) e positivo no grupo Sadio (5, DP 6 graus).
+O slope sacral em pé médio no grupo Artrose foi 32 graus (DP 3 graus), e no grupo Sadio 46 graus (DP 9 graus).
+O slope sacral sentado no grupo Artrose foi 14 graus (DP 9 graus) e no grupo Sadio 21 graus (DP 7 graus).
+A inclinação pélvica média foi negativa no grupo Artrose (-6, DP 3 graus) e positiva no grupo Sadio (5, DP 6 graus).
 
-O slope em pé e o tilt foram significativamente diferentes no grupo Artrose quando comparados ao grupo Sadio (Tabela 2).
-Após ajustar pelo sexo, idade e IMC a diferença do slope em pé foi -11 graus (ANCOVA, IC: -19 -- -3.4; p=0.006) e o tilt foi -8,7 graus (ANCOVA, IC: -15 -- -2.0; p=0.013).
-O slope sentado não foi significativamente diferente (ANCOVA 2.2, IC: -3.8 -- 8.2, p=0.5).
+O slope sacral em pé e a inclinação pélvica foram significativamente diferentes no grupo Artrose quando comparados ao grupo Sadio (Tabela 2).
+Após ajustar pelo sexo, idade, IMC e HHS a diferença
+do slope sacral em pé foi -11 graus (ANCOVA, IC: -19 -- -3.4; p=0.006) e
+a inclinação pélvica foi -8,7 graus (ANCOVA, IC: -15 -- -2.0; p=0.013).
+O slope sacral sentado não foi significativamente diferente (ANCOVA 2.2, IC: -3.8 -- 8.2, p=0.5).
 
 ```{r tab_inf}
 tab_inf %>%
@@ -181,7 +184,7 @@ tab_inf %>%
 ```
 
 Os outros ângulos espino-pélvicos tiveram distribuições semelhantes entre os dois grupos.
-Após ajustar pelo sexo, idade e IMC dos participantes as diferenças médias entre os grupos foram pequenas relativas ao tamanho do estudo.
+Após ajustar pelo sexo, idade, IMC e HHS dos participantes as diferenças médias entre os grupos foram pequenas relativas ao tamanho do estudo.
 O ângulo ACB médio no grupo Artrose foi 34,2 graus e 31,8 graus no grupo Sadio (IC: -6.8 -- 5.6 graus).
 O ângulo IA médio foi 1,7 graus no grupo Artrose e 2,8 graus no grupo Sadio (IC: -4.2 -- 5.0 graus).
 O ângulo Alfa médio foi 57 graus no grupo Artrose e 59 no grupo Sadio (IC: -4.1 -- 10 graus).
@@ -194,6 +197,11 @@ knitr::include_graphics("../figures/angulos.png", error = FALSE)
 # Observações e limitações
 
 # Conclusões
+
+Os pacientes com artrose moderada ou grave apresentaram slope sacral (medido na posição em pé) e a inclinação pélvica significativamente menores que os pacientes sadios.
+O slope sacral sentado não foi significativamente diferente entre os grupos.
+
+Os ângulos espino-pélvicos ACB, Alfa e IA tiveram distribuições semelhantes entre os dois grupos.
 
 # Referências
 

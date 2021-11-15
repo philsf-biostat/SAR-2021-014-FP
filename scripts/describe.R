@@ -15,12 +15,8 @@ theme_gtsummary_language(language = "pt") # traduzir
 # exploratory -------------------------------------------------------------
 
 # overall description
-# analytical %>%
-#   skimr::skim()
-
-# minimum detectable effect size
-# interpret_d(0.5)
-
+analytical %>%
+  skimr::skim()
 
 # tables ------------------------------------------------------------------
 
