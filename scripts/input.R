@@ -52,6 +52,7 @@ participantes <- data.raw %>%
     sexo,
     idade,
     imc,
+    dor,
     dor_t,
     lombalgia,
     hhs,
@@ -74,17 +75,24 @@ data.raw <- data.raw %>%
     -hipermovel,
     # -tonnis,
   )
+
 data.raw <- data.raw %>%
   pivot_longer(ends_with(c("_d", "_e"))) %>%
   separate(name, c("name", "lado")) %>%
   pivot_wider(names_from = name, values_from = value) %>%
   mutate(
+    # lado 1 = d, 2 = e, 3 = ambos
     lado = ifelse(lado == "d", 1, 2),
     dor = case_when(
-      dor == lado ~ 1,
-      dor == 3 ~ 1,
-      TRUE ~ 0,
+      dor == lado ~ "1",
+      dor == 3 ~ "1",
+      TRUE ~ "0",
     ),
+  )
+
+participantes <- participantes %>%
+  mutate(
+    dor = factor(dor, labels = c("Direito", "Esquerdo", "Bilateral")),
   )
 
 # labels ------------------------------------------------------------------
@@ -109,6 +117,8 @@ participantes <- participantes %>%
     tipo = "Tipo",
     tonnis = "Classificação Tonnis",
     mobilidade = "Mobilidade",
+    dor = "Lado da dor",
+    dor_t = "Tempo de dor (meses)",
     # variacao = "Variação",
   )
 
