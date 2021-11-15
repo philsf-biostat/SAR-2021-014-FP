@@ -28,6 +28,23 @@ data.raw <- data.raw %>%
     tilt = tilt_em_pe,
   )
 
+
+# data wrangling ----------------------------------------------------------
+
+data.raw <- data.raw %>%
+  mutate(
+    id = factor(id), # or as.character
+    sexo = factor(sexo, labels = c("Feminino", "Masculino")),
+    tonnis = factor(tonnis, labels = c("Normal", "Leve", "Moderada", "Grave")),
+    tipo = factor(tipo, levels = c("1A", "1B", "2A", "2B")),
+    lombalgia = ifelse(lombalgia == 2, 0, 1),
+    mobilidade = factor(mobilidade, labels = c("Normal", "Hipermóvel", "Rígido")),
+    group = ifelse(tonnis %in% c("Normal", "Leve"), "A", "B"),
+    group = factor(group, labels = c("Sadio", "Artrose")),
+  )
+
+# reshape -----------------------------------------------------------------
+
 # perfil epidemiológico em tabela separada
 participantes <- data.raw %>%
   select(
@@ -42,6 +59,8 @@ participantes <- data.raw %>%
     mobilidade,
     tonnis,
   )
+
+# reduzir tabela pré reshape
 data.raw <- data.raw %>%
   select(
     # -sexo,
@@ -55,31 +74,6 @@ data.raw <- data.raw %>%
     -hipermovel,
     # -tonnis,
   )
-
-# data wrangling ----------------------------------------------------------
-
-data.raw <- data.raw %>%
-  mutate(
-    id = factor(id), # or as.character
-    sexo = factor(sexo),
-    tipo = factor(tipo),
-    tonnis = factor(tonnis),
-    group = ifelse(tonnis %in% 0:1, "A", "B"),
-    group = factor(group, labels = c("Sadio", "Artrose")),
-  )
-participantes <- participantes %>%
-  mutate(
-    id = factor(id), # or as.character
-    sexo = factor(sexo, labels = c("Feminino", "Masculino")),
-    tonnis = factor(tonnis, labels = c("Normal", "Leve", "Moderada", "Grave")),
-    tipo = factor(tipo, levels = c("1A", "1B", "2A", "2B")),
-    lombalgia = ifelse(lombalgia == 2, 0, 1),
-    mobilidade = factor(mobilidade, labels = c("Normal", "Hipermóvel", "Rígido"))
-  )
-
-
-# reshape -----------------------------------------------------------------
-
 data.raw <- data.raw %>%
   pivot_longer(ends_with(c("_d", "_e"))) %>%
   separate(name, c("name", "lado")) %>%
