@@ -77,6 +77,7 @@ data.raw <- data.raw %>%
     ),
     tonnis = factor(tonnis),
     group = ifelse(tonnis %in% 0:1, "A", "B"),
+    group = factor(group, labels = c("Sadio", "Artrose")),
   )
 participantes <- participantes %>%
   mutate(
