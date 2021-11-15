@@ -167,7 +167,7 @@ o ângulo alfa médio foi 58,8 graus (DP 6,70 graus) e o
 knitr::include_graphics("../figures/angulos.png", error = FALSE)
 ```
 
-## Análise inferencial
+## Ângulos espino-pélvicos
 
 ```{r tab_inf}
 tab_inf %>%
