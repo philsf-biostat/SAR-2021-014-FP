@@ -198,6 +198,11 @@ knitr::include_graphics("../figures/angulos.png", error = FALSE)
 
 # Conclusões
 
+Os pacientes com artrose moderada ou grave apresentaram slope sacral (medido na posição em pé) e a inclinação pélvica significativamente menores que os pacientes sadios.
+O slope sacral sentado não foi significativamente diferente entre os grupos.
+
+Os ângulos espino-pélvicos ACB, Alfa e IA tiveram distribuições semelhantes entre os dois grupos.
+
 # Referências
 
 - **SAP-2021-014-FP-v01** -- Plano Analítico para Diferenças nos ângulos espino-pélvicos em pacientes com artrose
