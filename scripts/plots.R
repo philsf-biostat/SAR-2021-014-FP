@@ -33,7 +33,7 @@ gg.angulos <- analytical %>%
   # rename(Grupo = group) %>%
   ggplot(aes(angulo, fill = group)) +
   facet_wrap(~ medida) +
-  geom_density(alpha = .7) +
+  geom_density(alpha = .9) +
   scale_fill_brewer(palette = ff.pal) +
   xlab("Ângulo") +
   ylab("Densidade") +
