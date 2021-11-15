@@ -36,7 +36,7 @@ panderOptions('table.split.table', 160)
 
 ---
 
-Diferenças nos ângulos espino-pélvicos em pacientes com artrose
+**Diferenças nos ângulos espino-pélvicos em pacientes com artrose**
 
 **Histórico do documento**
 
@@ -53,38 +53,118 @@ kable(history)
 
 # Lista de abreviaturas
 
+- ACB:
+- ANCOVA:
+- DP: Desvio padrão
+- HHS: Harris hip score
+- IA:
+- IC: Intervalo de confiança
+- IMC: Índice de massa corpórea
+
 # Contexto
+
+Dados coletados transversalmente de pacientes com dor no quadril, em busca de problemas na coluna que possam estar associados a impactos femoroacetabulares de quadril.
+
+<!-- O ângulo espino-pélvico chamado slope sacral varia de acordo com o grau de artrose do quadril. -->
+<!-- O ângulo espino-pélvico chamado slope sacral varia entre posições sentado e em pé de forma diminuída de acordo com a idade e índice de massa corpórea do paciente. -->
+<!-- O ângulo espino-pélvico chamado inclinação pélvica varia entre os pacientes com artrose do quadril. -->
 
 ## Objetivos
 
-## Recepção e tratamento dos dados
+Avaliar a variação do slope sacral entre os grupos com e sem artrose nos pacientes com alterações biomecânicas primárias do quadril, nas posições em pé e sentado.
 
-# Metodologia
+## Recepção e tratamento dos dados
 
 ```{r results, include=FALSE}
 source("scripts/results.R", encoding = 'UTF-8')
 ```
 
+A tabela de dados brutos exibe `r c.orig` características de `r n.orig` pacientes do Hospital Regional de São José em Santa Catarina, incluindo características demográficas e mensurações de ângulos espino-pélvicos.
+
+A tabela de dados brutos foi transformada de modo que cada observação é um quadril, tendo identificado o lado do quadril, se há ocorrência de dor e os ângulos mensurados.
+A tabela resultante é a tabela de dados analíticos, usada para avaliação dos desfechos da análise.
+
+A classificação de artrose foi definida em protocolo como possuindo classificação de Tonnis moderada ou grave.
+O grupo comparador é formado pelos casos em que a classificação de Tonnis foi Normal ou Leve.
+
+Todas as variáveis da tabela de dados analíticos foram identificadas de acordo com as descrições das variáveis, e os valores foram identificados de acordo com o dicionário de dados providenciado.
+Estas identificações possibilitarão a criação de tabelas de resultados com qualidade de produção final.
+
+# Metodologia
+
 ## Variáveis
 
 ### Desfechos primário e secundário
 
+Os desfechos primários estão definidos como
+a diferença média entre o ângulo chamado slope sacral entre os participantes com e sem artrose na posição sentada,
+a diferença média entre o ângulo chamado slope sacral entre os participantes com e sem artrose na posição em pé e
+o ângulo chamado inclinação pélvica entre os participantes com e sem artrose.
+
+Os desfechos secundários estão definidos como as diferenças médias dos ângulos ACB, IA e Alfa ente os pacientes com e sem artrose.
+
 ### Covariáveis
+
+As estimativas de diferença média entre os grupos foram ajustadas pelo sexo, idade e IMC dos participantes.
 
 ## Análises Estatísticas
 
+O perfil epidemiológico dos participantes do estudo foi descrito na baseline.
+As características demográficas
+(sexo, idade e IMC)
+e clínicas
+(lado da dor no quadril e o tempo em meses, ocorrência de lombalgia, HHS, tipo, mobilidade e classificação Tonnis)
+foram descritas como
+média (DP)
+ou frequência e proporção (%), conforme apropriado.
+As distribuições das características dos participantes foram resumidas em tabelas e visualizadas em gráficos exploratórios
+
+A unidade de análise foi o quadril.
+Variáveis contínuas foram comparadas entre os grupos com
+um modelo linear ajustado por sexo, idade e IMC dos participantes (ANCOVA).
+Este teste é semelhante ao teste t, mas permite o ajuste por covariáveis para corrigir por confundimento.
+
+Todas as análises foram realizadas ao nível de significância de 5%.
+Todos os testes de hipóteses e intervalos de confiança calculados foram
+bicaudais.
 Esta análise foi realizada utilizando-se o software `R` versão `r getRversion()`.
 
 # Resultados
 
 ## População do estudo e acompanhamento
 
+Ao total 17 participantes foram incluídos no estudo (Tabela 1).
+O perfil epidemiológico do paciente incluído é composto por
+mulheres (76%)
+em torno de 40 anos
+com IMC 21.5 kg/m².
+O participante sente dor predominantemente
+no quadril direito (41%)
+há quase 3 anos (32 meses).
+
+Dos participantes incluídos 14 foram classificados no grupo Sadio com 53% apresentando classificação Tonnis Normal e 29% Leve, e 3 participantes foram classificados no grupo Artrose (6% Tonnis Moderada e 12% Grave).
+O HHS médio do é 70 com DP 11 e em sua maioria estes não possuem alteração na mobilidade (65%) com apenas 18% apresentando hipermobilidade e outros 18% com rigidez no movimento.
+A maior parte da amostra apresenta lombalgia concomitante com as alterações espino-pélvicas (71%) avaliadas.
+
 ```{r tab_desc}
 tab_desc %>%
     as_kable(
     align = "lccc",
-    caption = "**Tabela 1** caption"
+    caption = "**Tabela 1** Características epidemiológicas e clínicas dos participantes incluídos no estudo."
   )
+```
+
+A Figura 1 mostra os ângulos espino-pélvicos nos dois grupos de estudo.
+O slope em pé médio no estudo foi 43,2 graus (DP 9,67 graus), variando entre -10 e 17 graus.
+O slope sentado médio foi 19,8 graus (DP 7,41 graus) e variou entre 5 e 32 graus.
+O tilt médio foi 3.12 graus (DP 7.12 graus), variando entre -4 e 17 graus.
+O ângulo ACB médio foi 32,2 graus (DP 6,04 graus),
+o ângulo alfa médio foi 58,8 graus (DP 6,70 graus) e o
+ângulo IA médio foi 2,56 graus (DP 3,99 graus).
+
+```{r fig1, fig.cap="**Figura 1** Distribuição dos ângulos espinopélvicos na população do estudo."}
+# ![Age](../figures/distr_age.png)
+knitr::include_graphics("../figures/angulos.png", error = FALSE)
 ```
 
 ## Análise inferencial

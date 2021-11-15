@@ -28,6 +28,23 @@ data.raw <- data.raw %>%
     tilt = tilt_em_pe,
   )
 
+
+# data wrangling ----------------------------------------------------------
+
+data.raw <- data.raw %>%
+  mutate(
+    id = factor(id), # or as.character
+    sexo = factor(sexo, labels = c("Feminino", "Masculino")),
+    tonnis = factor(tonnis, labels = c("Normal", "Leve", "Moderada", "Grave")),
+    tipo = factor(tipo, levels = c("1A", "1B", "2A", "2B")),
+    lombalgia = ifelse(lombalgia == 2, 0, 1),
+    mobilidade = factor(mobilidade, labels = c("Normal", "Hipermóvel", "Rígido")),
+    group = ifelse(tonnis %in% c("Normal", "Leve"), "A", "B"),
+    group = factor(group, labels = c("Sadio", "Artrose")),
+  )
+
+# reshape -----------------------------------------------------------------
+
 # perfil epidemiológico em tabela separada
 participantes <- data.raw %>%
   select(
@@ -35,13 +52,16 @@ participantes <- data.raw %>%
     sexo,
     idade,
     imc,
+    dor,
     dor_t,
     lombalgia,
     hhs,
-    tipo,
+    # tipo,
     mobilidade,
     tonnis,
   )
+
+# reduzir tabela pré reshape
 data.raw <- data.raw %>%
   select(
     # -sexo,
@@ -50,42 +70,29 @@ data.raw <- data.raw %>%
     -dor_t,
     -lombalgia,
     -hhs,
-    # -tipo,
+    -tipo,
     -mobilidade,
     -hipermovel,
     # -tonnis,
   )
 
-# reshape
 data.raw <- data.raw %>%
   pivot_longer(ends_with(c("_d", "_e"))) %>%
   separate(name, c("name", "lado")) %>%
   pivot_wider(names_from = name, values_from = value) %>%
-  mutate(lado = ifelse(lado == "d", 1, 2))
-
-# data wrangling ----------------------------------------------------------
-
-data.raw <- data.raw %>%
   mutate(
-    id = factor(id), # or as.character
-    sexo = factor(sexo),
-    tipo = factor(tipo),
+    # lado 1 = d, 2 = e, 3 = ambos
+    lado = ifelse(lado == "d", 1, 2),
     dor = case_when(
-      dor == lado ~ 1,
-      dor == 3 ~ 1,
-      TRUE ~ 0,
+      dor == lado ~ "1",
+      dor == 3 ~ "1",
+      TRUE ~ "0",
     ),
-    tonnis = factor(tonnis),
-    group = ifelse(tonnis %in% 0:1, "A", "B"),
   )
+
 participantes <- participantes %>%
   mutate(
-    id = factor(id), # or as.character
-    sexo = factor(sexo, labels = c("Feminino", "Masculino")),
-    tonnis = factor(tonnis, labels = c("Normal", "Leve", "Moderada", "Grave")),
-    tipo = factor(tipo, levels = c("1A", "1B", "2A", "2B")),
-    lombalgia = ifelse(lombalgia == 2, 0, 1),
-    mobilidade = factor(mobilidade, labels = c("Normal", "Hipermóvel", "Rígido"))
+    dor = factor(dor, labels = c("Direito", "Esquerdo", "Bilateral")),
   )
 
 # labels ------------------------------------------------------------------
@@ -107,9 +114,11 @@ participantes <- participantes %>%
     imc = "IMC (kg/m²)",
     lombalgia = "Ocorrência de lombalgia",
     hhs = "HHS",
-    tipo = "Tipo",
+    # tipo = "Tipo",
     tonnis = "Classificação Tonnis",
     mobilidade = "Mobilidade",
+    dor = "Lado da dor",
+    dor_t = "Tempo de dor (meses)",
     # variacao = "Variação",
   )
 
@@ -117,7 +126,7 @@ participantes <- participantes %>%
 
 analytical <- data.raw %>%
   select(
-    -tonnis
+    -tonnis,
   )
 
 # mockup of analytical dataset for SAP and public SAR
