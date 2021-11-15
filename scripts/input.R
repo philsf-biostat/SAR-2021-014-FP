@@ -56,7 +56,7 @@ participantes <- data.raw %>%
     dor_t,
     lombalgia,
     hhs,
-    tipo,
+    # tipo,
     mobilidade,
     tonnis,
   )
@@ -70,7 +70,7 @@ data.raw <- data.raw %>%
     -dor_t,
     -lombalgia,
     -hhs,
-    # -tipo,
+    -tipo,
     -mobilidade,
     -hipermovel,
     # -tonnis,
@@ -114,7 +114,7 @@ participantes <- participantes %>%
     imc = "IMC (kg/m²)",
     lombalgia = "Ocorrência de lombalgia",
     hhs = "HHS",
-    tipo = "Tipo",
+    # tipo = "Tipo",
     tonnis = "Classificação Tonnis",
     mobilidade = "Mobilidade",
     dor = "Lado da dor",
@@ -126,7 +126,7 @@ participantes <- participantes %>%
 
 analytical <- data.raw %>%
   select(
-    -tonnis
+    -tonnis,
   )
 
 # mockup of analytical dataset for SAP and public SAR

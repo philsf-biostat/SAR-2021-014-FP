@@ -35,7 +35,7 @@ tab_inf <- analytical %>%
   tbl_summary(
     by = group,
     # include = starts_with(c("slope", "tilt")),
-    include = -c(sexo, idade, imc, dor, tipo, lado),
+    include = -c(sexo, idade, imc, dor, lado),
   ) %>%
   add_difference(
     # test = all_continuous() ~ "cohens_d",
