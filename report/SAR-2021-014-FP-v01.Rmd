@@ -150,7 +150,7 @@ A maior parte da amostra apresenta lombalgia concomitante com as alterações es
 tab_desc %>%
     as_kable(
     align = "lccc",
-    caption = "**Tabela 1** caption"
+    caption = "**Tabela 1** Características epidemiológicas e clínicas dos participantes incluídos no estudo."
   )
 ```
 
