@@ -32,7 +32,6 @@ tab_desc <- participantes %>%
     include = -dor_t,
   ) %>%
   # modify_caption(caption = "**Tabela 1** Características demográficas") %>%
-  # modify_header(label ~ "**Características dos pacientes**") %>%
+  modify_header(label ~ "**Características dos participantes**") %>%
   bold_labels() %>%
   modify_table_styling(columns = "label", align = "c")
-
