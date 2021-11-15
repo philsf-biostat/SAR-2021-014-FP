@@ -53,11 +53,11 @@ kable(history)
 
 # Lista de abreviaturas
 
-- ACB:
-- ANCOVA:
+- ACB: ângulo centro-borda acetabular
+- ANCOVA: Análise de covariância
 - DP: Desvio padrão
 - HHS: Harris hip score
-- IA:
+- IA: índice acetabular
 - IC: Intervalo de confiança
 - IMC: Índice de massa corpórea
 
