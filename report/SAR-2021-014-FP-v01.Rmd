@@ -2,7 +2,7 @@
 title: "Associação entre artrose e alteração de ângulos espino-pélvicos em pacientes com impacto femoroacetabular"
 subtitle: 'DOCUMENTO: SAR-2021-014-FP-v01'
 author: '**De:** Felipe Figueiredo **Para:** Fernando de Pina Cabral'
-# date: yyyy-mm-dd
+date: 2021-11-15
 output:
   html_document:
     fig_caption: yes
