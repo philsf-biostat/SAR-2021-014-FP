@@ -196,6 +196,8 @@ knitr::include_graphics("../figures/angulos.png", error = FALSE)
 
 # Observações e limitações
 
+N/A.
+
 # Conclusões
 
 Os pacientes com artrose moderada ou grave apresentaram slope sacral (medido na posição em pé) e a inclinação pélvica significativamente menores que os pacientes sadios.
