@@ -17,7 +17,7 @@ tab_inf <- analytical %>%
   ) %>%
   add_difference(
     # test = all_continuous() ~ "cohens_d",
-    adj.vars = c(sexo, idade, imc),
+    adj.vars = c(sexo, idade, imc, hhs),
   ) %>%
   modify_header(label ~ "**Ângulos**") %>%
   modify_footnote(update = c(estimate, ci, p.value) ~ "ANCOVA (ajustada por sexo, idade, IMC e HHS)") %>%
