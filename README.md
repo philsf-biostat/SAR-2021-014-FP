@@ -22,11 +22,11 @@ Análise Estatística para Fernando de Pina Cabral (Hospital Regional de São Jo
 
 ### Relatório de Análise Estatística (SAR)
 
-<!-- - [Visualização online][reportviz-v02] -->
-<!-- - [Download][pdf-v02] -->
+- [Visualização online][reportviz-v02]
+- [Download][pdf-v02]
 
-- [Visualização online][reportviz-v01]
-- [PDF][pdf-v01]
+<!-- - [Visualização online][reportviz-v01] -->
+<!-- - [PDF][pdf-v01] -->
 
 ## Portfólio
 
