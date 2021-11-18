@@ -68,7 +68,7 @@ data.raw <- data.raw %>%
     # -idade,
     # -imc,
     -dor_t,
-    -lombalgia,
+    # -lombalgia,
     # -hhs,
     -tipo,
     -mobilidade,
